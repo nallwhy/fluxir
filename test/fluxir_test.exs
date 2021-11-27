@@ -1,8 +1,9 @@
 defmodule FluxirTest do
-  use ExUnit.Case
-  doctest Fluxir
+  use ExUnit.Case, async: true
 
-  test "greets the world" do
-    assert Fluxir.hello() == :world
+  test "struct" do
+    fluxir = %Fluxir{}
+
+    assert fluxir.functions == []
   end
 end
