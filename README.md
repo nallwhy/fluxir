@@ -1,6 +1,16 @@
 # Fluxir
 
-**TODO: Add description**
+Fluxir is a [Flux](https://github.com/influxdata/flux) builder for Elixir.
+
+```elixir
+iex> (Fluxir.from(bucket: "<bucket>")
+|> Fluxir.range(start: "-1d")
+|> Fluxir.to_string(pretty: true)
+|> IO.puts())
+
+from(bucket: "<bucket>")
+|> range(start: -1d)
+```
 
 ## Installation
 
@@ -15,7 +25,6 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/fluxir](https://hexdocs.pm/fluxir).
+## Supporting Flux version
 
+Fluxir targets to support Flux [v0.143.0](https://docs.influxdata.com/flux/v0.x/release-notes/#v01430-2021-11-22) now.
