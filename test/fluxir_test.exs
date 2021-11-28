@@ -18,4 +18,9 @@ defmodule FluxirTest do
              %Fluxir{functions: [test_function0, test_function1]}
              |> Fluxir.to_flux()
   end
+
+  test "from/2" do
+    assert %Fluxir{functions: [%Fluxir.Function.Influxdata.Influxdb.From{bucket: "bucket"}]} =
+             Fluxir.from(bucket: "bucket")
+  end
 end
