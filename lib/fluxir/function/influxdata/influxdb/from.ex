@@ -15,11 +15,13 @@ defmodule Fluxir.Function.Influxdata.Influxdb.From do
 
   defstruct @params |> Enum.map(fn {name, _type} -> name end)
 
+  @doc false
   @impl true
   def new(keyword) do
     struct(__MODULE__, keyword)
   end
 
+  @doc false
   @impl true
   def to_flux(%__MODULE__{} = struct) do
     "#{@name}(#{convert_params_to_flux(struct)})"
